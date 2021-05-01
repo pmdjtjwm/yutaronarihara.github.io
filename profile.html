@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>Profile</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="icon" href="image/favicon.png">
+    <link rel="icon" href="image/favicon.png" sizes="32×32"/>
+    <link rel="icon" href="image/favicon.png" sizes="192×192"/>
+    <link rel="apple-touch-icon-precomposed" href="images/favicon.png" sizes="150×150"/>
+    
+    <meta name="description" content="成原佑太郎のポートフォリオ">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <meta property="og:url" content="http://example.com/index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Portofolio Home">
+    <meta property="og:description" content="成原佑太郎のポートフォリオ">
+    <meta property="og:image" content="http://example.com/images/ogp.jpg">
+
+    <!-- css -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+    <link rel="stylesheet" href="css/styl.css">
+
+  </head>
+  <body>
+    <div id="profile">
+      <div class="head big-bg">
+        <header class="page-header wrapper">
+          <div class="sp-menu">
+            <span class="material-icons" id="open">menu</span>
+          </div>
+          <div class="overlay">
+            <span class="material-icons" id="close">close</span>
+            <nav>
+              <ul class="main-nav">
+                <li><a href="index.html">Top</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#Portfolio">Portfolio</a></li>
+                <li><a href="#Contact">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <div class="intro">
+          <img src="image/IMG_6433.jpg" alt="プロフィール写真です">
+          <div class="intro-ditails">
+            <h1>Profile</h1>
+            <h3><span>Y</span>utaro Narihara</h3>
+            <h3><span>F</span>eb 05 1994</h3>
+            <p>ポートフォリオをご覧いただきありがとうございます☺︎<br>
+              俳優として活動しながらプログラミングの勉強をしています。<br>
+              プライベートでは、ピアノを弾き動画を撮り編集してMVみたいなものを作成してます。<br>
+              <br>
+              Webサイト制作をお客様の要望に丁寧かつ迅速に、誠意を持って対応させていただきます。
+            </p>
+          </div>
+        </div>
+      </div>
+      
+    <main class="profile-main">
+        <section class="portfolio">
+          <div class="containe" id="Portfolio">
+            <div class="portfolio-section-heading">
+              <h3>制作実績</h3>
+              <h1>Portfolio</h1>
+            </div> 
+            <div class="row no-gutters">
+              <div class="col-lg-4">
+                <a class="portfolio-item" href="#">
+                  <span class="caption">
+                    <span class="caption-content">
+                      <h2>Cafeホームページ</h2>
+                    </span>
+                    <img class="img-fluid" src="image/ScreenshotoWCBcafe.jpeg" alt="WCBCafeのmenuサイトです。">
+                  </span>
+                </a>
+              </div>
+              <div class="col-lg-4">
+                <a class="portfolio-item" href="#">
+                  <span class="caption">
+                    <span class="caption-content">
+                      <h2>APRIL.COMPANY</h2>
+                    </span>
+                    <img class="img-fluid" src="image/ScreenshotoAPRIL.jpeg" alt="APRIL.COMPANYのサイトです。">
+                  </span>
+                </a>
+              </div>
+              <div class="col-lg-4">
+                <a class="portfolio-item" href="#">
+                  <span class="caption">
+                    <span class="caption-content">
+                      <h2>Profile</h2>
+                    </span>
+                    <img class="img-fluid" src="image/ScreenshotoProfile.jpeg" alt="成原佑太郎のプロフィールサイトです。">
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class=contact id="Contact">
+          <h2 class="cantact-title">Get In Touch</h2>
+          <form action="#">
+            <div class="name-email">
+              <div class="txtbox txtbox-name">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="your-name">
+              </div>
+              <div  class="txtbox txtbox-email">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="your-email">
+              </div>
+            </div>
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" name="your-message"></textarea>
+            </div>
+            <input type="submit" class="btn" value="SUBMIT">
+          </form>
+        </div>
+    </main>
+
+    <footer>
+      <div class="wrapper">
+        <p><small>&copy; 2021 Yutaro's Portfolio.</small></p>
+      </div>
+    </footer>
+      
+    <script src="js/main.js"></script>
+  </body>
+</html>
