@@ -6,6 +6,7 @@
 /* -------共通部分-------- */
 html{
   font-size:100%;
+  margin:0;
 }
 
 img{
@@ -373,9 +374,9 @@ label{
 input[type="text"],
 input[type="email"],
 textarea{
-  border-bottom:1px #0b8793 solid;
   padding:5px;
   font-size:1rem;
+  opacity:0.2;
 }
 
 input[type="text"],
@@ -477,11 +478,9 @@ footer p{
   .intro img{
     width:220px;
     height:220px;
-    /* margin:0; */
   }
 
   .intro-ditails{
-    /* flex-direction: column; */
     text-align: center;
     width:100%;
     padding:0;
@@ -544,9 +543,11 @@ footer p{
 
   .contact{
     padding:0 30px;
+    margin-bottom: 4rem;
   }
   .contact h2{
     font-size: 1.5em;
+    margin-bottom: 2rem;
   }
 
   label{
@@ -566,7 +567,19 @@ footer p{
 
   input[type="text"],
   input[type="email"]{
-    height:50%;
+    height:20%;
+  }
+
+  input[type="submit"]{
+    margin-top:2rem;
+  }
+
+  label{
+    margin-bottom:5px;
+  }
+
+  form div{
+    margin:0;
   }
 
   textarea{
@@ -580,5 +593,9 @@ footer p{
 
   small{
     font-size:0.85rem;
+  }
+
+  footer{
+    padding:13px;
   }
 }
