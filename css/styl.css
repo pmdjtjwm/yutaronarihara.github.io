@@ -224,13 +224,18 @@ ul, li{
   color:#fff;
 }
 
-.parallax {
-  background-image: url("../image/blackcoffee.png");
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+.parallax:before{
+    content:"";
+    display:block;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:-1;
+    width:100%;
+    height:100vh;
+    background:url(../image/blackcoffee.png) center no-repeat;
+    background-size:cover;
+  }
 
 .profile-main{
   background: -moz-linear-gradient(#305766,#fff);
@@ -1158,6 +1163,10 @@ margin-left:auto;
     width:50%;
   }
 
+  .profile-main{
+    /* padding-top: 5rem; */
+  }
+
 
   /* -------ポートフォリオ -------- */
   
@@ -1398,6 +1407,7 @@ margin-left:auto;
     padding-top:10rem;
   }
 
+  
   .service-item .service-container{
     width:300px;
   }
