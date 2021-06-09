@@ -7,6 +7,7 @@
 html{
   font-size:100%;
   margin:0;
+  scroll-behavior: smooth;
 }
 
 img{
@@ -27,8 +28,10 @@ header{
   width:100%;
   height:auto;
   display:flex;
-  padding-top:34px;
-  padding-bottom:34px;
+}
+
+ul, li{
+  list-style: none;
 }
 
 
@@ -40,7 +43,7 @@ header{
 }
 
 .sp-menu #open{
-  position:fixed;
+  position:absolute;
   left:auto;
   top:34px;
   font-size: 40px;
@@ -63,7 +66,7 @@ header{
 .home-content{
   width:100%;
   text-align: center;
-  margin-top: 10%;
+  padding-top: 20%;
 }
 
 .home-content h3{
@@ -112,7 +115,7 @@ header{
 
 .overlay{
   width:25%;
-  position:fixed;
+  position:absolute;
   top:0;
   bottom:0;
   right:0;
@@ -149,28 +152,33 @@ header{
 
 
 .overlay ul{
-  width:100%;
+  width:100px;
   height: 100%;
   top:0;
   margin:0;
   padding:0;
   font-size:1.25rem;
-  list-style: none;
-  padding:100px 44px;
+  margin:100px 44px;
 }
 
 .overlay li{
   font-size: 1.5rem;
-  margin-bottom:40px;
   align-items: center;
   opacity:0;
   transform:  translateX(56px);
   transition: opacity .6s, transform .6s;
+  width:100px;
+  margin-bottom:40px;
+
 }
 
 .overlay.show li{
   opacity:1;
   transform: none;
+  width:100px;
+  margin:0;
+  margin-bottom:40px;
+
 }
 
 .overlay.show li:nth-child(1){
@@ -189,7 +197,7 @@ header{
 .overlay li a{
   color:#fff;
   font-weight: bold;
-  opacity: 80%;
+  opacity: 0.8;
 }
 
 .overlay li a:hover{
@@ -204,17 +212,24 @@ header{
 
 #profile{
   color:#fff;
-  text-shadow: 2px 2px 7px #0b8793;;
+  text-shadow: 2px 2px 7px #0b8793;
 }
 
 
 .head{
-  background-image: url(../image/blackcoffee.png);
-  min-height: 100vh;
+  min-height: 100%;
   border-bottom: 2px solid #0b8793;
   border-image: linear-gradient(to right,  #242a2e 0%, #0b8793 100%);
   border-image-slice: 1;
   color:#fff;
+}
+
+.parallax {
+  background-image: url("../image/blackcoffee.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .profile-main{
@@ -225,12 +240,9 @@ header{
 
 .intro{
   display: flex;
-  min-height: 100vh;
-  justify-content: space-around;
-  padding:0 80px;
+  height:100vh;
+  justify-content: center;
   color:#fff;
-  margin-top: auto;
-  margin-bottom: auto;
 }
 
 .intro img{
@@ -240,11 +252,13 @@ header{
   border-radius: 50%;
   box-shadow: 2px 2px 20px #0d0f0fb6;
   margin:auto;
+  margin-right:1rem;
 }
 
 .intro-ditails{
   width:50%;
   margin:auto;
+  margin-left:1rem;
   line-height: 1.5;
 }
 
@@ -309,16 +323,123 @@ header{
   opacity: 1;
 }
 
+.scrolldown1{
+  /*描画位置※位置は適宜調整してください*/
+  position:absolute;
+  left:10%;
+  bottom:20px;
+    /*全体の高さ*/
+  height:50px;
+}
+
+.scrolldown1 span{
+  /*描画位置*/
+  position: absolute;
+  left:-15px;
+  top: -15px;
+    /*テキストの形状*/
+  color: #eee;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+}
+
+.scrolldown1::after{
+  content: "";
+    /*描画位置*/
+  position: absolute;
+  top: 0;
+    /*線の形状*/
+  width: 1px;
+  height: 50px;
+  background: #eee;
+    /*線の動き1.4秒かけて動く。永遠にループ*/
+  animation: pathmove 2.4s ease-in-out infinite;
+  opacity:0;
+}
+
+@keyframes pathmove{
+  0%{
+    height:0;
+    top:0;
+    opacity: 0;
+  }
+  30%{
+    height:100px;
+    opacity: 1;
+  }
+  100%{
+    height:0;
+    top:100px;
+    opacity: 0;
+  }
+}
+
+
+/* ---------サービス---------- */
+
+
+.service{
+  padding-top: 20rem;
+}
+
+.service .service-title{
+  text-align: center;
+  margin-bottom:5rem;
+}
+
+.service .service-title h3{
+  font-size:1rem;
+}
+.service .service-title h1{
+  font-size: 2.5rem;
+  border-bottom:1px solid #0b8793;
+  border-image: linear-gradient(to right,  #0b8793 0%, #ffee00 100%);
+  border-image-slice: 1;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.service-item{
+  display:flex;
+  justify-content: center;
+}
+
+.service-item .service-container{
+  text-align: center;
+  width: 280px;
+  height: auto;
+  margin-right:2rem;
+  margin-left:2rem;
+}
+
+.service-item .service-container h1{
+  margin-bottom:0.5rem;
+}
+.service-item .service-container h3{
+  font-size:1rem;
+  margin-bottom:2rem;
+}
+
+.service-item .service-container img{
+  margin-bottom:2rem;
+}
+
+.service-item .service-container p{
+  text-align: initial;
+}
+
+
 
 /* -------ポートフォリオ-------- */
 
 .containe{
-  padding-top:7.5rem;
-  padding-bottom:7.5rem;
+  padding-top: 20rem;
+  padding-bottom:20rem;
 }
 
 .portfolio-section-heading{
   text-align: center;
+  margin-bottom: 5rem;
 }
 
 .portfolio-section-heading h3{
@@ -334,13 +455,44 @@ header{
   margin-bottom: 10px;
 }
 
+.worklist{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: center;
+}
 
+.worklist li{
+  margin-right:0.1rem;
+  margin-bottom: 2rem;
+}
+
+.worklist li:nth-child(even){
+  margin-left:0.1rem;
+  margin-bottom: 2rem;
+}
+
+.worklist .photo{
+  overflow:hidden;
+  height:303.33px;
+}
+
+.worklist .photo img{
+  transition: all .5s;
+
+}
+
+.worklist .photo img:hover{
+  transform: scale3d(1.1,1.1,1.1);
+  transition: all .5s;
+  opacity:0.7;
+}
 
 /* -------コンタクトフォーム-------- */
 
 .contact{
   text-align: center;
-  margin-bottom: 7.5rem;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
 }
 
 .contact h2{
@@ -352,13 +504,36 @@ header{
   margin-bottom: 10px;
 }
 
-form div{
-  margin:1.5rem 0;
+.contact h3{
+  font-size:1rem;
+}
+
+.parallax-bg {
+  background-image: url(../image/bluecoffee.jpeg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position:relative;
+}
+
+.parallax-bg::before{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: ' ';
+}
+
+form{
+  margin-top:5rem;
 }
 
 label{
   font-size:1.125rem;
   display:block;
+  margin-bottom:1rem;
 }
 
 .txtbox{
@@ -369,14 +544,20 @@ label{
 .name-email{
   display:flex;
   justify-content: center;
+  margin-bottom:6rem;
+
 }
 
 input[type="text"],
 input[type="email"],
 textarea{
-  padding:5px;
+  padding:5px 8px;
   font-size:1rem;
-  opacity:0.2;
+  opacity:0.6;
+  background: -moz-linear-gradient(rgba(255, 255, 255, 0.26), #0b88932f);
+  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.26), #0b88932f);
+  background: linear-gradient(rgba(255, 255, 255, 0.26), #0b88932f);
+  border-radius:3px;
 }
 
 input[type="text"],
@@ -388,7 +569,7 @@ input[type="email"]{
 textarea{
   width:100%;
   max-width:480px;
-  height:4rem;
+  height:6rem;
   line-height: 1.25rem;
 }
 
@@ -396,6 +577,8 @@ input[type="submit"]{
   border:none;
   cursor:pointer;
   line-height:1;
+  margin-top:3rem;
+  font-size:1rem;
 }
 
 .btn{
@@ -424,158 +607,699 @@ input[type="submit"]{
 /* -------フッター------- */
 
 footer{
-  background:#305766;
-  text-align: center;
-  padding:26px 0;
+  padding: 190px 100px 0;
+  background-color: #f7f5f5;
+  z-index: 0;
+}
+
+.footer-inner {
+  position: relative;
+  height: 360px;
+  padding-bottom: 0;
+  background-color: #0b88932f;
+}
+
+.page-top {
+  display: inline-block;
+  position: absolute;
+  top: -28px;
+  right: 46px;
+  width: 30px;
+  height: 55px;
+  background-color: transparent;
+}
+
+.page-top::before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 14px;
+  width: 1px;
+  height: 55px;
+  background-color: #111;
+  transition: all .3s;
+}
+
+.page-top::after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 12px;
+  width: 5px;
+  height: 5px;
+  border-top: 1px solid #111;
+  transform: rotate(45deg);
+  transition: all .3s;
+}
+
+.footer-nav-area {
+  padding: 0;
+  position: relative;
+}
+
+.footer-nav-list {
+  width: 100%;
+  position: absolute;
+  bottom: 50px;
+  right: -12px;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+.footer-nav-list li {
+  display: inline-block;
+  margin: 0 0 10% 5%;
+}
+
+.footer-nav-list a, .footer-snav-list a {
+  font-family: 'Heebo', sans-serif;
+  position: relative;
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #111;
+  text-shadow:none;
+  line-height: 1.0;
+  letter-spacing: 0.06em;
+  font-weight: 400;
+}
+
+.footer-nav-list a::after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0.5em;
+  left: -5%;
+  width: 100%;
+  height: 1px;
+  background-color: #111;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: all .3s;
+}
+
+.footer-nav-list a:hover::after {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
+
+.footer-snav-list {
+  width: 100%;
+  position: absolute;
+  bottom: -12px;
+  right: 8px;
+  text-align: left;
+  margin-bottom: 10%;
+}
+
+.copyright {
+  font-family: 'Heebo', sans-serif;
+  font-weight: 400;
+  padding: 50px 0;
+  color:#111;
+  text-shadow: none;
+  font-size: 1rem;
+  text-align: right;
+
 }
 
 footer p{
   font-size:1.25rem;
 }
 
+#load {
+  position:absolute;
+  width:600px;
+  height:36px;
+  left:50%;
+  top:20%;
+  margin-left:-300px;
+  overflow:visible;
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+  cursor:default;
+}
+
+#load div {
+  position:absolute;
+  width:20px;
+  height:36px;
+  opacity:0;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  animation:move 3s linear infinite;
+  -o-animation:move 3s linear infinite;
+  -moz-animation:move 3s linear infinite;
+  -webkit-animation:move 3s linear infinite;
+  transform:rotate(180deg);
+  -o-transform:rotate(180deg);
+  -moz-transform:rotate(180deg);
+  -webkit-transform:rotate(180deg);
+  color:#fff;
+}
+
+#load div:nth-child(2) {
+  animation-delay:0.3s;
+  -o-animation-delay:0.3s;
+  -moz-animation-delay:0.3s;
+  -webkit-animation-delay:0.3s;
+}
+#load div:nth-child(3) {
+  animation-delay:0.6s;
+  -o-animation-delay:0.6s;
+  -webkit-animation-delay:0.6s;
+  -webkit-animation-delay:0.6s;
+}
+#load div:nth-child(4) {
+  animation-delay:0.9s;
+  -o-animation-delay:0.9s;
+  -moz-animation-delay:0.9s;
+  -webkit-animation-delay:0.9s;
+}
+#load div:nth-child(5) {
+  animation-delay:1.2s;
+  -o-animation-delay:1.2s;
+  -moz-animation-delay:1.2s;
+  -webkit-animation-delay:1.2s;
+}
+#load div:nth-child(6) {
+  animation-delay:1.5s;
+  -o-animation-delay:1.5s;
+  -moz-animation-delay:1.5s;
+  -webkit-animation-delay:1.5s;
+}
+#load div:nth-child(7) {
+  animation-delay:1.8s;
+  -o-animation-delay:1.8s;
+  -moz-animation-delay:1.8s;
+  -webkit-animation-delay:1.8s;
+}
+
+@keyframes move {
+  0% {
+    left:0;
+    opacity:0;
+  }
+  35% {
+    left: 41%; 
+    -moz-transform:rotate(0deg);
+    -webkit-transform:rotate(0deg);
+    -o-transform:rotate(0deg);
+    transform:rotate(0deg);
+    opacity:1;
+  }
+  65% {
+    left:59%; 
+    -moz-transform:rotate(0deg); 
+    -webkit-transform:rotate(0deg); 
+    -o-transform:rotate(0deg);
+    transform:rotate(0deg); 
+    opacity:1;
+  }
+  100% {
+    left:100%; 
+    -moz-transform:rotate(-180deg); 
+    -webkit-transform:rotate(-180deg); 
+    -o-transform:rotate(-180deg); 
+    transform:rotate(-180deg);
+    opacity:0;
+  }
+}
+
+@-moz-keyframes move {
+  0% {
+    left:0; 
+    opacity:0;
+  }
+  35% {
+    left:41%; 
+    -moz-transform:rotate(0deg); 
+    transform:rotate(0deg);
+    opacity:1;
+  }
+  65% {
+    left:59%; 
+    -moz-transform:rotate(0deg); 
+    transform:rotate(0deg);
+    opacity:1;
+  }
+  100% {
+    left:100%; 
+    -moz-transform:rotate(-180deg); 
+    transform:rotate(-180deg);
+    opacity:0;
+  }
+}
+
+@-webkit-keyframes move {
+  0% {
+    left:0; 
+    opacity:0;
+  }
+  35% {
+    left:41%; 
+    -webkit-transform:rotate(0deg); 
+    transform:rotate(0deg); 
+    opacity:1;
+  }
+  65% {
+    left:59%; 
+    -webkit-transform:rotate(0deg); 
+    transform:rotate(0deg); 
+    opacity:1;
+  }
+  100% {
+    left:100%;
+    -webkit-transform:rotate(-180deg); 
+    transform:rotate(-180deg); 
+    opacity:0;
+  }
+}
+
+@-o-keyframes move {
+  0% {
+    left:0; 
+    opacity:0;
+  }
+  35% {
+    left:41%; 
+    -o-transform:rotate(0deg); 
+    transform:rotate(0deg); 
+    opacity:1;
+  }
+  65% {
+    left:59%; 
+    -o-transform:rotate(0deg); 
+    transform:rotate(0deg); 
+    opacity:1;
+  }
+  100% {
+    left:100%; 
+    -o-transform:rotate(-180deg); 
+    transform:rotate(-180deg); 
+    opacity:0;
+  }
+}
 
 
 
-@media(max-width:600px){
+
+#loading {
+  width: 100%;
+  height: 100%;
+  transition: all 5s;
+  background-color: rgb(97, 97, 97);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  pointer-events: none;
+}
+  
+.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.scroll-line::after {
+  content: '';
+  display: block;
+  position: absolute;
+}
+  
+/* ローディングアニメーション */
+@keyframes sk-scaleout {
+  0% {
+    transform: scale(0);
+  } 70%{
+    transform: scale(0);
+  } 100% {
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+
+/* ---------APRIL.html--------- */
+
+
+#work .sp-menu #open{
+  color: #111;
+  text-shadow: 2px 2px 7px #fff;
+  opacity:1;
+}
+
+#work .sp-menu #open:hover{
+  opacity:.6;
+  transition: .6s;
+
+}
+
+#work .overlay #close{
+  color: #111;
+  text-shadow: 2px 2px 7px #fff;
+  opacity:1;
+}
+
+#work .overlay #close:hover{
+  opacity:.6;
+  transition: .6s;
+}
+
+#work .overlay li a{
+  color: #111;
+  text-shadow: 2px 2px 7px #fff;
+  opacity:1;
+}
+
+#work .overlay li a:hover{
+  opacity:.6;
+  transition: .6s;
+}
+
+
+
+.main-work{
+  text-align: center;
+  margin:2rem 0 6rem;
+}
+
+.main-work h1{
+  color: #111;
+  font-size:3rem;
+  font-weight:normal;
+  margin-bottom:3rem;
+}
+
+.main-work a{
+  color: #111;
+  
+}
+
+.main-work > a{
+  width:80%;
+}
+
+.ttl{
+  margin:3rem auto 0.85rem;
+}
+
+.ttl a {
+  position: relative;
+  display: inline-block;
+  transition: .3s;
+  line-height:1.1rem;
+  font-size:1.25rem;
+}
+.ttl a::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 0;
+  height: 1px;
+  background-color: #111;
+  transition: all .3s;
+}
+.ttl a:hover::after {
+  width: 100%;
+}
+.skill{
+  margin-bottom:1.5rem;
+}
+
+.readLast{
+  font-size:0.85rem;
+  line-height: 1.5rem;;
+}
+
+
+
+
+/* ----------サンクスページ -------- */
+
+.thanks{
+  margin:20rem auto;
+}
+
+.thanks h1{
+text-align: center;
+margin-bottom: 5rem;
+}
+
+.thanks p{
+text-align: center;
+width:600px;
+margin-right:auto;
+margin-left:auto;
+}
+
+
+
+@media(max-width:1030px){
+  
+  #loading, #load{
+    display:none;
+  }
+
+  .intro img{
+    width:260px;
+    height:260px;
+    margin:auto 0;
+  }
+
+  .intro-ditails{
+    margin:0;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    
+  }
+
+  .intro-ditails h1, .intro-ditails h2, .intro-ditails h3{
+    text-align: center;
+  }
+
+  .intro-ditails h3{
+    margin-bottom: 2rem;
+  }
+  
+  .intro-ditails p{
+    height:75%;
+    writing-mode: vertical-rl;
+    margin:0 auto;
+  }
+
+  .scrolldown1{
+    bottom:28px;
+    height:28px;
+  }
+
+  .service-item{
+    display:block;
+    text-align: center;
+  }
+
+  .service-item .service-container{
+    width:500px;
+    margin-right:auto;
+    margin-left:auto;
+  }
+  
+  .service-item .service-container p{
+    margin-bottom:5rem;
+  }
+
+}
+
+
+
+
+@media(max-width:750px){
   .none{display:none}
 
 
   /* ---------モバイル版--------- */
 
 
-  .overlay ul{
-    padding:50px 22px;
-  }
 
-  .overlay li{
-    font-size:1rem;
-    margin-bottom:20px;
-  }
-
-  /* -------トップ-------- */
-
-  .page-title{
-    font-size:3rem;
-    margin-bottom:20px;
-    margin-top: 20%;
+  .sp-menu #open, .overlay #close{
+    font-size: 30px;
+    left:3%;
+    right:auto;
   }
   
-  .home-content h3{
-    margin-top: 30px;
+  .overlay{
+    margin:0;
+    width:100%;
   }
-
-
+  
+  .overlay ul{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    margin:0;
+    padding:3rem 6rem 0;
+    text-align: center;
+  }
+  
+  .overlay li{
+    opacity:0;
+    transform: translateY(-16px);
+    transition:.6s;
+  }
+  
+  .overlay.show li{
+    opacity:1;
+    transition: opacity .3s, transform .6s;
+    font-size:1.25rem;
+    margin:0;
+    width:50%;
+  }
 
 
   /* -------ポートフォリオ -------- */
+  
 
-
+  .service .service-title h1{
+    font-size:2rem;
+  }
+  
   .intro{
-    flex-direction: column;
-    padding:0 30px
+    display: block;
+    padding:6rem 2rem;
+    text-align: center;
   }
-
+  
   .intro img{
-    width:220px;
-    height:220px;
+    margin-bottom:1.5rem;
   }
-
+  
   .intro-ditails{
     text-align: center;
     width:100%;
     padding:0;
     margin:0 0 3rem;
   }
-
+  
   .intro-ditails h1{
     font-size: 2rem;
   }
-
+  
   .intro-ditails p{
-    margin:15px 0 2rem;
     font-size: 0.875rem;
+    writing-mode: horizontal-tb;
+    margin:0 ;
   }
-
+  
   .row{
     display:block;
   }
   
-  .portfolio{
-    padding:0 30px;
+
+
+/* -------サービス------- */
+
+
+  .service{
+    padding-top:10rem;
   }
 
   .portfolio-section-heading h3{
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
-
+  
   .portfolio-section-heading h1{
     font-size: 2rem;
   }
-
+  
   .col-lg-4{
     text-align: center;
     margin-right: auto;
     margin-left: auto;
     margin-bottom:2rem;
   }
-
+  
   .caption-content h2{
     display: none;
   }
-
+  
   .img-fluid{
     width:100%;
     border:1px solid transparent;
     border-image: linear-gradient(to bottom right, #ffffff 0%, silver 100%);
     border-image-slice: 1;
   }
-
+  
   .img-fluid:hover{
     opacity:.8;
   }
-
+  
   .col-lg-4{
     width:80%;
   }
+
+
+  
+  /* -------実績------- */
+
+  .containe{
+    padding-top:10rem;
+    padding-bottom:15rem;
+  }
+
+
+  .service-item{
+    display:block;
+  }
+
+  .service-item .service-container{
+    width:400px;
+  }
   
 
-  /* ------コンタクトフォーム------- */
 
+  /* ------コンタクトフォーム------- */
+  
   .contact{
-    padding:0 30px;
-    margin-bottom: 4rem;
+    padding:10rem 0;
+    margin-bottom: 10rem;
   }
+
   .contact h2{
-    font-size: 1.5em;
+    font-size: 2em;
     margin-bottom: 2rem;
   }
 
-  label{
-    font-size: 0.85rem;
+  .name-email{
+    display:block;
+    margin-bottom:1.5rem;
   }
 
   .txtbox{
-    width:40%;
+    width:100%;
   }
 
   .txtbox-name{
-    margin:1rem 10px 1rem 30px;
+    margin:0 0 1.5rem;
   }
+
   .txtbox-email{
-    margin:1rem 30px 1rem 10px;
+    margin:0;
   }
 
   input[type="text"],
   input[type="email"]{
-    height:60%;
+    width:100%;
   }
 
   input[type="submit"]{
     margin-top:2rem;
   }
 
-  label{
-    margin-bottom:5px;
+  form{
+    margin-top:3rem;
   }
 
   form div{
@@ -583,12 +1307,11 @@ footer p{
   }
 
   textarea{
-    width:80%;
-    height:50%;
+    width:100%;
   }
 
   .btn{
-    width:70%;
+    width:100px;
   }
 
   small{
@@ -597,5 +1320,147 @@ footer p{
 
   footer{
     padding:13px;
+  } 
+
+  .footer-inner{
+    height:200px;
+    margin:4rem 2rem 3rem;
   }
+  
+  .footer-snav-list{
+    right:27px;
+    text-align: right;
+  }
+
+  .footer-snav-list li img{
+    width:18px;
+  }
+
+  .copyright{
+    text-align: center;
+    padding:0 0 15px;
+  }
+
+  .main-work{
+    margin-top:8rem;
+  }
+
+  .readLast{
+    width:450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .thanks{
+    margin-top:15rem;
+    margin-bottom:15rem;
+  }
+
+  .thanks h1{
+    font-size:1.85rem;
+  }
+
+  .thanks p{
+    width:400px;
+    font-size: 0.85rem;
+  }
+
+}
+
+
+@media(max-width:480px){
+
+
+
+
+  .page-title{
+    font-size:3rem;
+    margin-bottom:20px;
+  }
+  
+  .home-content {
+    padding:13rem 2rem;
+  }
+
+  .home-content h3{
+    margin-bottom:5rem;
+  }
+
+  .overlay li{
+   display:none
+  }
+
+  .sp-menu #open, .overlay #close{
+    display: none;
+  }
+
+  .intro{
+    padding-top:10rem;
+  }
+
+  .service-item .service-container{
+    width:300px;
+  }
+
+  .contact{
+    margin-bottom: 0;
+  }
+  
+  .worklist{
+    width:300px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .worklist .photo{
+    height:200px;
+  }
+
+  form{
+    padding-left:2rem;
+    text-align: left;
+  }
+
+  input[type="text"], input[type="email"]{
+    width:180px;
+  }
+
+  textarea{
+    width:280px;
+  }
+
+  .footer-inner{
+    height:150px;
+    margin-top:1.5rem;
+    margin-bottom:0.85rem;
+  }
+
+  .main-work > img{
+    width:100%;
+  }
+
+  .skill{
+    font-size:0.85rem;
+  }
+
+  .readLast{
+    font-size: 0.5rem;
+    width:300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .main-work{
+    margin-top: 5rem;
+  }
+
+  .thanks{
+    width:330px;
+  }
+
+  .thanks p{
+    width:330px;
+    margin:0;
+  }
+
 }

@@ -3,6 +3,13 @@
 
 
 {
+  // $('.parallax-window').parallax({imageSrc: 'ima'});
+  
+  window.onload = function() {
+    const spinner = document.getElementById('loading');
+    spinner.classList.add('loaded');
+  }
+
   const open = document.getElementById('open');
   const overlay = document.querySelector('.overlay');
   const close = document.getElementById('close');
@@ -16,4 +23,6 @@
     overlay.classList.remove('show');
     open.classList.remove('hide');
   });
+
+  
 }
