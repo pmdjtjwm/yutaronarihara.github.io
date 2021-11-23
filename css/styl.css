@@ -1160,8 +1160,7 @@ margin-left:auto;
   }
   
   .service-item .service-container p{
-    text-align: center;
-    margin:0 2rem 7rem;
+    margin:0 0.5rem 7rem;
   }
 
 }
@@ -1178,6 +1177,9 @@ margin-left:auto;
   /* ---------モバイル版--------- */
 
 
+  /* p{
+    font-family:sans-serif
+  } */
 
   .sp-menu #open, .overlay #close{
     font-size: 30px;
@@ -1229,13 +1231,15 @@ margin-left:auto;
   
   .intro img{
     margin-bottom:1.5rem;
+    width:15rem;
+    height:15rem;
   }
   
   .intro-ditails{
     text-align: center;
     width:100%;
     padding:0;
-    margin:0 0 3rem;
+    margin:0 0 10rem;
   }
   
   .intro-ditails h1{
@@ -1452,19 +1456,41 @@ margin-left:auto;
 
   .intro{
     padding-top:5rem;
+    padding-bottom:5rem;
   }
 
+
+  .service{
+    padding-top:5rem;
+  }
+
+  .service .service-title{
+    margin-bottom:2rem;
+  }
   
   .service-item .service-container{
     width:300px;
   }
+
+  .service-item .service-container h3{
+    font-size:1.2rem;
+  }
+
+  .service-item .service-container p{
+    margin-bottom:2rem;
+ } 
+
+ .containe{
+  padding-top: 5rem;
+  padding-bottom: 10rem;
+ }
 
   .contact{
     margin-bottom: 0;
   }
   
   .worklist{
-    width:400px;
+    max-width:400px;
     margin-right: auto;
     margin-left: auto;
   }
