@@ -1471,6 +1471,8 @@ margin-left:auto;
 
   .service-item .service-container p{
     margin-bottom:4rem;
+    letter-spacing: 0;
+    font-size: 0.85rem;
  } 
 
  .containe{
@@ -1520,7 +1522,15 @@ margin-left:auto;
 
   .footer-snav-list{
     right:20px;
-    margin-bottom:2%;
+    margin-bottom:0;
+  }
+
+  .footer-snav-list li{
+    margin-bottom:5px;
+  }
+
+  .footer-snav-list li img{
+    width:22px;
   }
 
   .copyright{
