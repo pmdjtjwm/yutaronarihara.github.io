@@ -276,9 +276,9 @@ ul, li{
 .intro h1{
   margin-bottom: 10px;
   font-size:2.5rem;
-  border-bottom:1px solid #0b8793;
-  border-image: linear-gradient(to right,  #ffee00 0%, #0b8793 100%);
-  border-image-slice: 1;
+  border-style:solid;
+  border-image: linear-gradient(to right, #ffee00 0%, #0b8793 100%) 1/0 0 1px 0;
+  /* border-image-slice: 1; */
 }
 .intro h3{
   margin-bottom: 3px;
@@ -403,9 +403,8 @@ ul, li{
 }
 .service .service-title h1{
   font-size: 2.5rem;
-  border-bottom:1px solid #0b8793;
-  border-image: linear-gradient(to right,  #0b8793 0%, #ffee00 100%);
-  border-image-slice: 1;
+  border-style:solid;
+  border-image: linear-gradient(to right, #ffee00 0%, #0b8793 100%) 1/0 0 1px 0;
   padding-bottom: 5px;
   margin-bottom: 10px;
 }
@@ -461,9 +460,8 @@ ul, li{
 
 .portfolio-section-heading h1{
   font-size: 2.5rem;
-  border-bottom:1px solid #0b8793;
-  border-image: linear-gradient(to right,  #ffee00 0%, #0b8793 100%);
-  border-image-slice: 1;
+  border-style:solid;
+  border-image: linear-gradient(to right, #ffee00 0%, #0b8793 100%) 1/0 0 1px 0;
   padding-bottom: 5px;
   margin-bottom: 10px;
 }
@@ -510,9 +508,8 @@ ul, li{
 
 .contact h2{
   font-size:2.5rem;
-  border-bottom:1px solid #0b8793;
-  border-image: linear-gradient(to right,  #ffee00 0%, #0b8793 100%);
-  border-image-slice: 1;
+  border-style:solid;
+  border-image: linear-gradient(to right, #ffee00 0%, #0b8793 100%) 1/0 0 1px 0;
   padding-bottom: 5px;
   margin-bottom: 10px;
 }
@@ -1459,7 +1456,7 @@ margin-left:auto;
     padding-bottom:5rem;
   }
 
-
+  
   .service{
     padding-top:5rem;
   }
@@ -1490,7 +1487,7 @@ margin-left:auto;
   }
   
   .worklist{
-    max-width:400px;
+    max-width:360px;
     margin-right: auto;
     margin-left: auto;
   }
@@ -1514,8 +1511,7 @@ margin-left:auto;
 
   .footer-inner{
     height:150px;
-    margin-top:1.5rem;
-    margin-bottom:0.85rem;
+    margin:1.5rem 1rem 1rem;
   }
 
   .main-work > img{
