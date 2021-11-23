@@ -1174,10 +1174,6 @@ margin-left:auto;
   /* ---------モバイル版--------- */
 
 
-  p{
-    font-weight:bold;
-  }
-
   .sp-menu #open, .overlay #close{
     font-size: 30px;
     left:3%;
