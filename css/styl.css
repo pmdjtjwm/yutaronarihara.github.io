@@ -1177,9 +1177,9 @@ margin-left:auto;
   /* ---------モバイル版--------- */
 
 
-  /* p{
-    font-family:sans-serif
-  } */
+  p{
+    font-weight:bold;
+  }
 
   .sp-menu #open, .overlay #close{
     font-size: 30px;
