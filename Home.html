@@ -5,6 +5,7 @@
     <title>Profile</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+    <link href="https://fonts.googleapis.com/earlyaccess/sawarabimincho.css" rel="stylesheet" />
     <link rel="icon" href="image/favicon.png">
     <link rel="icon" href="image/favicon.png" sizes="32×32"/>
     <link rel="icon" href="image/favicon.png" sizes="192×192"/>
@@ -63,10 +64,10 @@
             <h1>Profile</h1>
             <h2>Yutaro Narihara</h2>
             <h3>Feb 05 1994</h3>
-            <p>ポートフォリオをご覧いただきありがとうございます☺︎<br>
+            <p>ポートフォリオをご覧いただき<br class="br-sp">ありがとうございます☺︎<br>
               <br>
-              新しいものを創造し、価値が生まれ想いが届く。<br>
-              よりたくさんの人に届ける、そんなお手伝いができればと思います。<br>
+              新しいものを創造し、<br class="br-sp">価値が見出され想いが生まれる。<br>
+              よりたくさんの人に届けたい、<br class="br-sp">そんなお手伝いができればと思います。<br>
             </p>
           </div>
         </div>
@@ -84,7 +85,7 @@
             <h1>ディレクション</h1>
             <h3>DIRECTION</h3>
             <img src="image/13568905.png" alt="ディレクションのアイコンです" width="102px" height="98px">
-            <p>SEOを意識したコーディングで見やすく編集しやすいコードを作成します。コーポレートサイトをはじめ、レスポンシブ対応のサイトもお任せください。</p>
+            <p>SEOを意識したコーディングで見やすく編集しやすいコードで作成します。コーポレートサイトをはじめ、<br class="br-sp">レスポンシブ対応のサイトもお任せください。</p>
           </div>
           <div class="service-container">
             <h1>デザイン</h1>
@@ -98,8 +99,8 @@
             <h1>コーディング</h1>
             <h3>CODING</h3>
             <img src="image/27180877.png" alt="コーディングのアイコンです" width="102px" height="98px" >
-            <p>デザインの役割や必要性を理解し、そのページにあった動きを入れることで印象はガラリと変わってきます。JavaScriptを使って動きを加え、<br>
-            飽きることのないコーディングを行ってます。</p>
+            <p>デザインの役割や必要性を理解し、<br class="br-sp">そのページにあった動きを入れることで印象はガラリと変わってきます。JavaScriptを使って動きを加え、<br>
+            飽きることのないコーディングを行います。</p>
           </div>
         </div>
       </section>
@@ -166,18 +167,21 @@
             <div class="name-email">
               <div class="txtbox txtbox-name">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="entry.2005620554">
+                <input type="text" id="name" name="entry.2005620554" class="m-form-text" required>
+                <span class="error">※入力がありません</span>
               </div>
               <div  class="txtbox txtbox-email">
                 <label for="email">E-mail</label>
-                <input type="email" id="email" name="entry.1045781291">
+                <input type="email" id="email" name="entry.1045781291" class="m-form-text" required>
+                <span class="error">※入力がありません</span>
               </div>
             </div>
             <div>
               <label for="message">Message</label>
-              <textarea id="message" name="entry.839337160"></textarea>
+              <textarea id="message" name="entry.839337160" class="m-form-text" required></textarea>
+              <span class="error">※入力がありません</span>
             </div>
-            <input type="submit" class="btn" value="SUBMIT">
+            <input type="submit" class="btn" value="SUBMIT" id="send">
           </form>
           <script type="text/javascript">var submitted = false;</script>
             <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location='thankspage.html';}"></iframe>
@@ -186,11 +190,11 @@
 
     <footer id="footer">
       <div class="footer-inner">
-        <a href="#top" class="page-top"></a>
+        <a href="#top" class="page-top" id="page-top"></a>
       </div>
       <div class="footer-nav-area">
         <ul class="footer-nav-list">
-          <li class="fnav01"><a href="Home.html">Home</a></li>
+          <li class="fnav01"><a href="index.html">Home</a></li>
           <li class="fnav03"><a href="Home.html#Portfolio">Portfolio</a></li>
           <li class="fsnav01"><a href="Home.html#Contact">Contact</a></li>
         </ul>
@@ -203,6 +207,28 @@
     </footer>
       
     <script src="js/main.js">var submitted=false;</script>
-    
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+
+  <script>
+    jQuery(function($){
+      $('#send').on("click", function() {
+        $('form').find('.invalid').removeClass('invalid');// 初期化
+        $('input[required]:invalid,textarea[required]:invalid').each(function(){// 項目が空だったらエラー表示をする
+          $(this).addClass('invalid');
+          $(this).next().addClass('invalid');
+        });
+        if($('.invalid').length == 0){// 未入力がない時
+          $('form').submit();
+          console.log('送信しました');
+        }else{// 未入力がある時
+          console.log('未入力があります');
+        }
+        return false;// submitの送信中止用
+      });
+    });
+    </script>
+
   </body>
 </html>

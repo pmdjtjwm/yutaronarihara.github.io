@@ -339,7 +339,7 @@ ul, li{
   position:absolute;
   left:10%;
   bottom:20px;
-    /*全体の高さ*/
+  /*全体の高さ*/
   height:50px;
 }
 
@@ -348,7 +348,7 @@ ul, li{
   position: absolute;
   left:-15px;
   top: -15px;
-    /*テキストの形状*/
+  /*テキストの形状*/
   color: #eee;
   font-size: 0.7rem;
   letter-spacing: 0.05em;
@@ -356,14 +356,14 @@ ul, li{
 
 .scrolldown1::after{
   content: "";
-    /*描画位置*/
+  /*描画位置*/
   position: absolute;
   top: 0;
-    /*線の形状*/
+  /*線の形状*/
   width: 1px;
   height: 50px;
   background: #eee;
-    /*線の動き1.4秒かけて動く。永遠にループ*/
+  /*線の動き2.4秒かけて動く。永遠にループ*/
   animation: pathmove 2.4s ease-in-out infinite;
   opacity:0;
 }
@@ -522,11 +522,9 @@ ul, li{
 }
 
 .parallax-bg {
-  background-image: url(../image/bluecoffee.jpeg);
+  background: url(../image/bluecoffee.jpeg) center no-repeat;
   background-attachment: fixed;
-  background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
   position:relative;
 }
 
@@ -539,7 +537,6 @@ ul, li{
     z-index: -1;
     width: 100%;
     height: 100vh;
-    /* background: url(../image/bluecoffee.jpeg) center no-repeat; */
     background-size: cover;
 }
 
@@ -562,7 +559,6 @@ label{
   display:flex;
   justify-content: center;
   margin-bottom:6rem;
-
 }
 
 input[type="text"],
@@ -570,6 +566,7 @@ input[type="email"],
 textarea{
   padding:5px 8px;
   font-size:1rem;
+  font-family: "Sawarabi Mincho";
   opacity:0.6;
   background: -moz-linear-gradient(rgba(255, 255, 255, 0.26), #0b88932f);
   background: -webkit-linear-gradient(rgba(255, 255, 255, 0.26), #0b88932f);
@@ -598,6 +595,19 @@ input[type="submit"]{
   font-size:1rem;
 }
 
+.m-form-text {
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0 0 0 1px #ccc inset;
+  -webkit-appearance: none;
+}
+
+.m-form-text:focus {
+  outline: 0;
+  box-shadow: 0 0 5px #0b88938c;
+  border: 1px solid #0b88938c;
+}
+
 .btn{
   font-family: Raleway, sans-serif;
   font-weight: bold;
@@ -610,13 +620,23 @@ input[type="submit"]{
   font-size:1.25em;
   padding:0 1em;
   cursor:pointer;
-  transition:800ms ease all;
+  transition:0.8s ease all;
   outline:none;
 }
 
 .btn:hover{
   background:rgba(255, 255, 255, 0.26);
   color:#0b8793;
+}
+
+.error{
+  color: #e5dc5e;
+  font-size: 0.8rem;
+  display: none;
+}
+
+.error.invalid{
+  display: block;
 }
 
 
@@ -644,6 +664,7 @@ footer{
   width: 30px;
   height: 55px;
   background-color: transparent;
+  transition:0.4s;
 }
 
 .page-top::before {
@@ -669,6 +690,11 @@ footer{
   border-top: 1px solid #111;
   transform: rotate(45deg);
   transition: all .3s;
+}
+
+.page-top:hover{
+  opacity:0.4;
+  transition:0.3s;
 }
 
 .footer-nav-area {
@@ -730,6 +756,15 @@ footer{
   margin-bottom: 10%;
 }
 
+.footer-snav-list img{
+  transition:0.4s;
+}
+
+.footer-snav-list img:hover{
+  opacity:0.4;
+  transition:0.3s;
+}
+
 .copyright {
   font-family: 'Heebo', sans-serif;
   font-weight: 400;
@@ -738,7 +773,6 @@ footer{
   text-shadow: none;
   font-size: 1rem;
   text-align: right;
-
 }
 
 footer p{
@@ -996,8 +1030,6 @@ footer p{
   transition: .6s;
 }
 
-
-
 .main-work{
   text-align: center;
   margin:2rem 0 6rem;
@@ -1028,7 +1060,7 @@ footer p{
   display: inline-block;
   transition: .3s;
   line-height:1.1rem;
-  font-size:1.25rem;
+  font-size:1.5rem;
 }
 .ttl a::after {
   position: absolute;
@@ -1046,7 +1078,6 @@ footer p{
 .skill{
   margin-bottom:1.5rem;
 }
-
 .readLast{
   font-size:0.85rem;
   line-height: 1.5rem;;
@@ -1082,12 +1113,13 @@ margin-left:auto;
   }
 
   .intro img{
-    width:260px;
-    height:260px;
+    width:20rem;
+    height:20rem;
     margin:auto 0;
   }
 
   .intro-ditails{
+    width:40%;
     margin:0;
     margin-top: 5rem;
     margin-bottom: 5rem;
@@ -1096,10 +1128,13 @@ margin-left:auto;
 
   .intro-ditails h1, .intro-ditails h2, .intro-ditails h3{
     text-align: center;
+    width:70%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .intro-ditails h3{
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
   }
   
   .intro-ditails p{
@@ -1125,12 +1160,15 @@ margin-left:auto;
   }
   
   .service-item .service-container p{
-    margin-bottom:5rem;
+    text-align: center;
+    margin:0 2rem 7rem;
   }
 
 }
 
-
+@media screen and (min-width: 480px){
+  .br-sp {display: none; }
+  }
 
 
 @media(max-width:750px){
@@ -1202,6 +1240,7 @@ margin-left:auto;
   
   .intro-ditails h1{
     font-size: 2rem;
+    margin-bottom:2px;
   }
   
   .intro-ditails p{
@@ -1336,7 +1375,7 @@ margin-left:auto;
   }
 
   footer{
-    padding:13px;
+    padding:100px 13px 13px;
   } 
 
   .footer-inner{
@@ -1425,13 +1464,13 @@ margin-left:auto;
   }
   
   .worklist{
-    width:300px;
+    width:400px;
     margin-right: auto;
     margin-left: auto;
   }
 
   .worklist .photo{
-    height:200px;
+    height:250px;
   }
 
   form{
@@ -1458,11 +1497,11 @@ margin-left:auto;
   }
 
   .skill{
-    font-size:0.85rem;
+    font-size:1rem;
   }
 
   .readLast{
-    font-size: 0.5rem;
+    font-size:0.85rem;
     width:300px;
     margin-left: auto;
     margin-right: auto;
