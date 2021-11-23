@@ -1497,6 +1497,10 @@ margin-left:auto;
     text-align: left;
   }
 
+  label{
+    font-weight:bold;
+  }
+
   input[type="text"], input[type="email"]{
     width:180px;
   }
@@ -1506,8 +1510,21 @@ margin-left:auto;
   }
 
   .footer-inner{
-    height:150px;
+    height:200px;
     margin:1.5rem 1rem 1rem;
+  }
+
+  .footer-nav-list {
+    right:10px;
+  }
+
+  .footer-snav-list{
+    right:20px;
+    margin-bottom:2%;
+  }
+
+  .copyright{
+    padding: 3rem 0 1.5rem;
   }
 
   .main-work > img{
