@@ -112,6 +112,9 @@ ul, li{
   background-image: url(../image/markus-spiske-N8yoH-dj4k8-unsplash.jpg);
   min-height: 100vh;
 }
+/* #home body{
+  background: #f7f5f5;
+} */
 
 .overlay{
   width:25%;
